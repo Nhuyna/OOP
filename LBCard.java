@@ -108,4 +108,13 @@ public abstract  class LBCard {
         System.arraycopy(DS, 0, array, 0, DS.length);
         array[DS.length] = tmp;
         return array;}
+    public static LBCard SearchId(LBCard DS[],String a){
+        for(LBCard x : DS){
+             if(x.getIdC().equals(a)){
+               
+              return x;
+             }
+        }
+          return null;
+}
 }

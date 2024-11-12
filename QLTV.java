@@ -1,3 +1,4 @@
+import java.util.Calendar;
 import java.util.Scanner;
 
 public interface QLTV extends MenuQLTV{
@@ -21,7 +22,19 @@ public interface QLTV extends MenuQLTV{
        }  } 
     
     }
-
+ 
+         public static Calendar LayNgay(String str[]){
+      Calendar Ngay=Calendar.getInstance();
+      Ngay.set(Calendar.DAY_OF_YEAR,Integer.parseInt(str[0]));
+      Ngay.set(Calendar.MONTH,Integer.parseInt(str[1]));
+      Ngay.set(Calendar.YEAR, Integer.parseInt(str[2]));
+      return Ngay;
+    }
+    public static String toStringNgay(Calendar Ngay){
+      String str;
+      str=Ngay.get(Calendar.DAY_OF_MONTH)+"/"+Ngay.get(Calendar.DAY_OF_MONTH)+"/"+Ngay.get(Calendar.YEAR);
+      return str;
+    }
    }
        //Xoá sách - ktra xem sách đó có trong thư viện không ->Xoá
        //Add bookitem-> kiểm tra xem book cần nhập có trong danh sách sách không->có thì thêm

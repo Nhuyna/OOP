@@ -52,8 +52,8 @@ public void setAuthor(Authors Author) {
     System.arraycopy(Sach, 0, array, 0, Sach.length);
     array[Sach.length] = tmp;
     return array;}
-    public static Books SearchId(Books TheLoai[],String a){
-        for(Books x : TheLoai){
+    public static Books SearchId(Books DS[],String a){
+        for(Books x : DS){
              if(x.getId().equals(a)){
                
               return x;

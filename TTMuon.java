@@ -4,11 +4,22 @@ import java.io.FileReader;
 import java.util.Calendar;
 public class TTMuon {
     String idMuon;
+    LBCard TheMuon;
     Calendar NgayMuon;
     Calendar HanMuon;
-    Books SachMuon;
+    BookItem SachMuon;
     boolean TrangThai;
+    public TTMuon(){
 
+    }
+    public TTMuon(String idMuon,LBCard TheMuon,Calendar NgayMuon,Calendar HanMuon,BookItem SachMuon,boolean TrangThai){
+        this.idMuon=idMuon;
+        this.TheMuon=TheMuon;
+        this.NgayMuon=NgayMuon;
+        this.HanMuon=HanMuon;
+        this.SachMuon=SachMuon;
+        this.TrangThai=TrangThai;
+    }
     public void setHanMuon(Calendar hanMuon) {
         HanMuon = hanMuon;
     }
@@ -18,11 +29,15 @@ public class TTMuon {
     public void setNgayMuon(Calendar ngayMuon) {
         NgayMuon = ngayMuon;
     }
-    public void setSachMuon(Books sachMuon) {
+    public void setSachMuon(BookItem sachMuon) {
         SachMuon = sachMuon;
     }
     public void setTrangThai(boolean trangThai) {
         TrangThai = trangThai;
+    }
+    @Override
+    public String toString(){
+        return String.format("%5s%15s%15s%15s%8s%35s%18s",idMuon,TheMuon.nguoiMuon.getName(),QLTV.toStringNgay(NgayMuon),QLTV.toStringNgay(HanMuon),SachMuon.idBIteam,SachMuon.Book.name,(TrangThai)?"Đang được mượn":"Đã trả");
     }
     public static TTMuon[] NhapGhiDL(boolean a,TTMuon DSM[]){
         
@@ -53,11 +68,13 @@ public class TTMuon {
                            BufferedReader br =new BufferedReader(fr);
                            String line="";
                            sl = Integer.parseInt(br.readLine());                      
-                           //Đọc dữ liệu sách
-                            Books Sach[]=new Books[0];
+                           //Đọc dữ liệu BookItem
+                            BookItem Sach[]=new BookItem[0];
                   
-                            Sach=QLSach.DocGhiDuLieuSach(false,Sach);            
-
+                            Sach=QLSach.DocGhiDuLieuChiTietSach(a,Sach);            
+                           //Đọc dữ liệu thẻ Mượn
+                            LBCard DSTM[]=new LBCard[0];
+                            DSTM=LBCard.DocGhiDL(false, DSTM);
                             while(true){
                                line=br.readLine();
                                if(line ==""){
@@ -65,12 +82,22 @@ public class TTMuon {
                                }
                                String txt[]=line.split(";");
                                String id=txt[0];
-                               String NgayMuon=txt[1];
-                               String HanMuon=txt[2];
-                               String idSachMuon=txt[3];
-                               boolean TrangThai= Boolean.parseBoolean(txt[4]);
-                              
+                               String idTM=txt[1];
+                               String linetmp=txt[2];
+                               String linetmp2=txt[3];
+                               String idSachMuon=txt[4];
+                               boolean TrangThai= Boolean.parseBoolean(txt[5]);
+                      
+                               String t[]=linetmp.split("/"); 
+                               Calendar NgayMuon=QLTV.LayNgay(t);
+                               String t2[]=linetmp2.split("/");
+                               Calendar HanMuon=QLTV.LayNgay(t);
+                               BookItem SachMuon=BookItem.SearchId(Sach, idSachMuon);
+                               LBCard TheMuon=LBCard.SearchId(DSTM,idTM);
+                               TTMuon tmp=new TTMuon(id,TheMuon,NgayMuon,HanMuon,SachMuon,TrangThai);
+                               DSM =TTMuon.addElementTTMuon(DSM, tmp); 
                                
+                            
                                                }
                                                br.close();
                                                fr.close();
@@ -83,5 +110,19 @@ public class TTMuon {
           
       return DSM;
     }
-
+    public static TTMuon[] addElementTTMuon(TTMuon[] DSM, TTMuon tmp) {
+        TTMuon[] array = new TTMuon[DSM.length+1];
+        System.arraycopy(DSM, 0, array, 0, DSM.length);
+        array[DSM.length] = tmp;
+        return array;}
+    
+        public static TTMuon SearchId(TTMuon DS[],String a){
+            for(TTMuon x : DS){
+                 if(x.idMuon.equals(a)){
+                   
+                  return x;
+                 }
+            }
+              return null;
+          }
 }

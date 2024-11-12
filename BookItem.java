@@ -62,4 +62,13 @@ public class BookItem {
     System.arraycopy(Sach, 0, array, 0, Sach.length);
     array[Sach.length] = tmp;
     return array;}
+    public static BookItem SearchId(BookItem DS[],String a){
+        for(BookItem x : DS){
+             if(x.getIdBIteam().equals(a)){
+               
+              return x;
+             }
+        }
+          return null;
+      }
 }

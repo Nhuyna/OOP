@@ -73,11 +73,25 @@ public class main {
 //         LBCard N=new TypeA("123",a);
 //          System.out.println(N.toString());
 //     }
-       LBCard DS[]=new LBCard[0];
-     DS= LBCard.DocGhiDL(false,DS);
-       for(LBCard x:DS){
+    //    LBCard DS[]=new LBCard[0];
+    //  DS= LBCard.DocGhiDL(false,DS);
+    //    for(LBCard x:DS){
+    //     System.out.println(x.toString());
+    //    }
+    // }
+
+      //    LBCard DS[]=new LBCard[0];
+    //  DS= LBCard.DocGhiDL(false,DS);
+    //    for(LBCard x:DS){
+    //     System.out.println(x.toString());
+    //    }
+
+    TTMuon DS[]=new TTMuon[0];
+    DS=TTMuon.NhapGhiDL(false, DS);
+    for(TTMuon x:DS){
         System.out.println(x.toString());
-       }
     }
+
+}
 }
 
