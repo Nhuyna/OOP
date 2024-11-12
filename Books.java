@@ -43,7 +43,22 @@ public void setAuthor(Authors Author) {
    public void setName(String name) {
        this.name = name;
    } 
-   public String toString(Books book){
-    return String.format("%20s%20s%20s",book.getName(),book.getAuthor().getName(),book.getCategory().getNameC());
+    @Override
+   public String toString(){
+    return String.format("%4s%45s%23s%23s",id,name,Author.name,category.NameC);
    }
+   public static Books[] addElementBooks(Books[] Sach, Books tmp) {
+    Books[] array = new Books[Sach.length+1];
+    System.arraycopy(Sach, 0, array, 0, Sach.length);
+    array[Sach.length] = tmp;
+    return array;}
+    public static Books SearchId(Books TheLoai[],String a){
+        for(Books x : TheLoai){
+             if(x.getId().equals(a)){
+               
+              return x;
+             }
+        }
+          return null;
+      }
 }

@@ -1,0 +1,18 @@
+17
+1001;J.K. Rowling
+1002;Harper Lee
+1003;George Orwell
+1004;Jane Austen
+1005;F. Scott Fitzgerald
+1006;Herman Melville
+1007;Leo Tolstoy
+1008;J.D. Salinger
+1009;J.R.R. Tolkien
+1010;Fyodor Dostoevsky
+1011;Charlotte Brontë
+1012;Aldous Huxley
+1013;Mark Twain
+1014;Homer
+1015;Victor Hugo
+1016;Oscar Wilde
+1017;Dante Alighieri

@@ -1,36 +1,83 @@
 
-import java.util.Scanner;
-
-
-
 public class main {
+
     public static void main(String[] args) {
-//         Authors tg1=new Authors("123","Nguyễn Nhật Ánh");
-//         Authors tg2=new Authors("456","Nam Cao");
-//         Category tl1=new Category("111","Truyện ngắn");
-//         Books sach=new Books("999","Tôi là Bêto",tg1,tl1);
-//         String tmp=String.format("%5s%20s%20s%20s","Stt","Tên Sách","Tên tác giả","Thể loại");
-//    System.out.println(tmp);
+           
+    // Books Sach[]=new Books[0];
+    // Sach=QLSach.DocGhiDuLieuSach(false,Sach);
+    // // System.out.println("hi");
+    // // for(Books k:Sach){
+    // //     System.out.println(k.toString());
+    // // }
+    // QLSach.DocGhiDuLieuSach(true,Sach);
+    // Authors TacGia[]=new Authors[0];
+    // TacGia= QLSach.DocGhiDuLieuTacGia(false,TacGia);
+    // for(Authors a:TacGia){
+    //     System.out.println(a.toString());
+    // }   
+//    QLSach.DocGhiDuLieuTacGia(true, TacGia);
+//    Category TheLoai[]=new Category[0];
+//   TheLoai= QLSach.DocGhiDuLieuTheLoai(false, TheLoai);
+//    for(Category x:TheLoai){
+//     System.out.println(x.toString());
+//    }
+//    TheLoai=QLSach.DocGhiDuLieuTheLoai(true, TheLoai);
 
-//        String tmp1=String.format("%5d",1,sach.getName(),sach.toString());
-//        String tmp3=sach.toString(sach);
-//        System.out.println(String.format("%5d", 1)+tmp3);
-//     //    BookItem a=new BookItem("123",sach,true,"Kệ a,tầng 2");
-//     BookItem a=new BookItem("123", sach, false, "ABC");
-// System.out.println(a.toString());
-     System.out.println(String.format("%50s%4s%s","-","MENU","-"));
-     int choice=0;
-     Scanner sc=new Scanner(System.in);
-     while(choice==0){
-           System.out.println("0.Thoát chương trình");
-           System.out.println("1.Hiển thị danh sách các đầu sách trong thư viện");
-           System.out.println("2.Hiển thị các thể loại đang có");
-           System.out.println("3.Mượn sách");
-           System.out.println("4.Trả sách");
-           choice=Integer.parseInt(sc.nextLine());    
-     }
+      // Location a[]=new Location[0];
+      // a=QLSach.DocGhiDuLieuViTri(false, a);
+      // System.out.println("\n\n");
+      // for(Location x : a){
+      //   System.out.println(x.toString());
+      // }
+
+    //  BookItem b[]=new BookItem[0];
+    //  b=QLSach.DocGhiDuLieuChiTietSach(false, b);
+    //  for(BookItem x:b){
+    //   System.out.println(x.toString());
+    //  }
     
+    // String line="05/2/2005";
+    // String txt[]=line.split("/");
+    // Calendar tmp=Calendar.getInstance();
+    // tmp.set(Calendar.DAY_OF_MONTH,Integer.parseInt(txt[0]));
+    // tmp.set(Calendar.MONTH, Integer.parseInt(txt[1]));
+    // tmp.set(Calendar.YEAR, Integer.parseInt(txt[2]));
+    // People a=new NhanVien("001","Nguyễn Văn A",tmp,"123abc",20,25000);
+    
+    // String str=String.format("%5s%5s%5s",a.getBirthdayDate().get(Calendar.DAY_OF_MONTH)+"/",a.getBirthdayDate().get(Calendar.MONTH)+"/",a.getBirthdayDate().get(Calendar.YEAR));
+    // System.out.println(str);
 
+
+//     NhanVien tmp[]=new NhanVien[0];
+//    tmp= NhanVien.NhapGhiDL(false, tmp);
+//     for(NhanVien t:tmp){
+//         System.out.println(t.toString());
+//     }
+        
+    // NguoiMuon tmp[]=new NguoiMuon[0];
+    // tmp=NguoiMuon.NhapGhiDL(false, tmp);
+    // for(NguoiMuon t:tmp){
+    //     System.out.println(t.toString());
+    // }
+
+//     String line="05/2/2005";
+//     String txt[]=line.split("/");
+//     Calendar BD=Calendar.getInstance();
+//     BD.set(Calendar.DAY_OF_MONTH,Integer.parseInt(txt[0]));
+//     BD.set(Calendar.MONTH, Integer.parseInt(txt[1]));
+//     BD.set(Calendar.YEAR, Integer.parseInt(txt[2]));
+//    NguoiMuon a=new NguoiMuon("001","Nguyễn Văn A",BD,"123abc");
+//     System.out.println("Nhập loại thẻ thư viện");
+//     String tmp="A";
+//     if(tmp=="A"){
+//         LBCard N=new TypeA("123",a);
+//          System.out.println(N.toString());
+//     }
+       LBCard DS[]=new LBCard[0];
+     DS= LBCard.DocGhiDL(false,DS);
+       for(LBCard x:DS){
+        System.out.println(x.toString());
+       }
     }
 }
 

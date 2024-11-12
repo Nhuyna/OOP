@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public interface QLTV {
+public interface QLTV extends MenuQLTV{
   //Mặc định public, abstract
   // public void NhapDuLieu();
   // public void LuuDuLieu();

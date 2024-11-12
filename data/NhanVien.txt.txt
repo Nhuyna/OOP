@@ -1,0 +1,20 @@
+1234;Harry Potter và Hòn Đá Phù Thủy;1001;001
+5678;Giết Con Chim Nhại;1002;002
+9101;1984;1003;003
+1121;Kiêu Hãnh và Định Kiến;1004;004
+3141;Đại Gia Gatsby;1005;005
+5161;Moby Dick;1006;006
+7181;Chiến Tranh và Hòa Bình;1007;007
+9202;Kẻ Bắt Trẻ Đồng Xanh;1008;008
+1222;Người Hobbit;1009;001
+3242;Tội Ác và Hình Phạt;1010;009
+5262;Chúa Tể Những Chiếc Nhẫn;1009;001
+7282;Jane Eyre;1011;010
+9303;Thế Giới Mới Dũng Cảm;1012;011
+1323;Những Cuộc Phiêu Lưu của Huckleberry Finn;1013;006
+3343;Odyssey;1014;012
+5363;Những Người Khốn Khổ;1015;007
+7383;Anh Em Nhà Karamazov;1010;013
+9404;Anna Karenina;1007;014
+1424;Chân Dung Dorian Gray;1016;013
+3444;Thần Khúc;1017;012

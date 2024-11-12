@@ -1,4 +1,7 @@
 public class QLMuon_Tra
  {
- //Kế thừa QLTV   
+    //Danh sách mượn
+    //Sau khi trả đẩy dữ liệu đó qua danh sách trả
+    
+ 
 }

@@ -1,14 +1,16 @@
 
 
+
+
 public class BookItem {
     protected String idBIteam;
     protected Books Book;
     protected boolean situation;
-    protected String location;
+    protected Location location;
    public BookItem(){
 
    }
-   public BookItem(String idBItem,Books Book, boolean situation,String location){
+   public BookItem(String idBItem,Books Book, boolean situation,Location location){
      this.idBIteam=idBItem;
      this.Book=Book;
      this.situation=situation;
@@ -23,10 +25,10 @@ public class BookItem {
         return idBIteam;
     }
 
-    public String getLocation() {
+    public Location getLocation() {
         return location;
     }
-    public void setLocation(String location) {
+    public void setLocation(Location location) {
         this.location = location;
     }
     public void setLocation() {
@@ -50,8 +52,14 @@ public class BookItem {
         return situation;
      }    
    
+    @Override
    public String toString(){
-    
-    return String.format("%5s%20s%20s%20s",idBIteam,Book.getName(),(situation)?"Còn":"Đang được mượn",location);
+   
+    return String.format("%5s%10s%10s%10s", getIdBIteam(),getBook().getName(),getSituation(),(getSituation())?location.toString():"null");
    }
+   public static BookItem[] addElementBookItem(BookItem[] Sach, BookItem tmp) {
+    BookItem[] array = new BookItem[Sach.length+1];
+    System.arraycopy(Sach, 0, array, 0, Sach.length);
+    array[Sach.length] = tmp;
+    return array;}
 }
