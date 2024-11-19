@@ -1,6 +1,7 @@
-
-
-
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
 
 public class Category {
     protected String idC;
@@ -46,4 +47,50 @@ public class Category {
     System.arraycopy(theLoai, 0, array, 0, theLoai.length);
     array[theLoai.length] = tmp;
     return array;}
+       public static Category[] DocGhiDuLieuTheLoai(boolean a,Category TheLoai[]){
+        //true: ghi
+        int slTheLoai;
+
+        if(a){
+   try {
+
+    FileWriter fw =new FileWriter("./data/category.txt");
+    BufferedWriter bw =new BufferedWriter(fw);
+               bw.write(""+TheLoai.length);
+               bw.newLine();
+              for(Category t:TheLoai){
+                // bw.write(t.toString());
+               bw.write(t.getIdC()+";"+t.getNameC());
+               bw.newLine();
+              }
+              bw.close();
+              fw.close();
+        } catch (Exception e) {
+        }
+        }
+        else{
+               try {
+                FileReader fr=new FileReader("./data/category.txt");
+                BufferedReader br =new BufferedReader(fr);
+                String line="";
+                slTheLoai = Integer.parseInt(br.readLine());                while(true){
+                  
+                    line=br.readLine();
+                    if(line ==""){
+                        break;
+                    }
+                    String txt[]=line.split(";");
+                    String id=txt[0];
+                    String name=txt[1]; 
+                    Category tmp=new Category(id, name);
+                    TheLoai=Category.addElementCategory(TheLoai, tmp);
+                                    }
+                                    br.close();
+                                    fr.close();
+                            } catch (Exception e) {
+                               
+                            }
+                            }
+                        return TheLoai;
+                        }
 }

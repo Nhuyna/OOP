@@ -1,29 +1,17 @@
 import java.util.Calendar;
-import java.util.Scanner;
 
 public interface QLTV extends MenuQLTV{
   //Mặc định public, abstract
   // public void NhapDuLieu();
   // public void LuuDuLieu();
   // public void NhapThongTin();
-   public default void InThongTin(){
-    int choice =0;
-    Scanner  sc=new Scanner(System.in);
-    while (choice==0) {
-      System.out.println("Bạn muốn: ");
-      System.out.println("1. In thông tin thẻ thư viện:"); 
-      System.out.println("2.In thông tin nhân viên");
-      System.out.println("3.In thông tin người mượn");
-      System.out.println("4. In thông tin sách"); 
-      choice=Integer.parseInt(sc.nextLine());  
-       if(choice==2){//test
-          QLSach a=new QLSach();
-          a.InThongTin();  
-       }  } 
-    
-    }
+
+   @Override
+   public void NhapThongTin();
+   @Override
+   public void InThongTin();
  
-         public static Calendar LayNgay(String str[]){
+      public static Calendar LayNgay(String str[]){
       Calendar Ngay=Calendar.getInstance();
       Ngay.set(Calendar.DAY_OF_YEAR,Integer.parseInt(str[0]));
       Ngay.set(Calendar.MONTH,Integer.parseInt(str[1]));

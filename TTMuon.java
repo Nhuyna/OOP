@@ -71,7 +71,7 @@ public class TTMuon {
                            //Đọc dữ liệu BookItem
                             BookItem Sach[]=new BookItem[0];
                   
-                            Sach=QLSach.DocGhiDuLieuChiTietSach(a,Sach);            
+                            Sach=BookItem.DocGhiDuLieuChiTietSach(a,Sach);            
                            //Đọc dữ liệu thẻ Mượn
                             LBCard DSTM[]=new LBCard[0];
                             DSTM=LBCard.DocGhiDL(false, DSTM);

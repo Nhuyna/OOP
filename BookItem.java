@@ -1,6 +1,5 @@
-
-
-
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 public class BookItem {
     protected String idBIteam;
@@ -71,4 +70,81 @@ public class BookItem {
         }
           return null;
       }
+
+      public static BookItem[] DocGhiDuLieuChiTietSach(boolean a,BookItem CTSach[]){
+        
+          if(a){
+             
+            // try {
+            //  FileWriter fw =new
+            //   FileWriter("./data/BookItem.txt");
+            //  BufferedWriter bw =new BufferedWriter(fw);
+            //            bw.write(""+CTSach.length);
+            //            bw.newLine();
+            //            for(BookItem t:CTSach){
+            //              // bw.write(t.toString());
+                        
+            //             bw.write(t.id+";"+t.name+";"+t.Author.idA+";"+t.category.idC);
+            //             bw.newLine();
+            //            }
+            //            bw.close();
+            //            fw.close();
+            //      } catch (Exception e) {
+            //      }
+                  
+                 }
+                 else{
+                        try {
+                          int slCTSach;
+                         FileReader fr=new FileReader("./data/BookItem.txt");
+                         BufferedReader br =new BufferedReader(fr);
+                         String line="";
+                         slCTSach = Integer.parseInt(br.readLine());                      
+                         //Đọc dữ liệu sách
+                          Books Sach[]=new Books[0];
+                
+                          Sach=Books.DocGhiDuLieuSach(false,Sach);            
+                         //Đọc dữ liệu vị trí
+                                Location ViTri[]=new Location[0];
+                                ViTri=Location.DocGhiDuLieuViTri(false, ViTri);
+                                // for(Location l : ViTri){
+                                //   System.out.println(l.toString());
+                                // }
+                          
+                                int i=0;
+                          while(true){
+                             line=br.readLine();
+                             if(line ==""){
+                                 break;
+                             }
+                             String txt[]=line.split(";");
+                             String id=txt[0];
+                             String book=txt[1];
+                             boolean situation= Boolean.parseBoolean(txt[2]);
+                             String location=txt[3];
+                             
+                             
+                                 Books x=Books.SearchId(Sach, book);
+                                 Location y=(Location.SearchId(ViTri,location));
+                                if(y==null){
+                                  System.out.println("Tìm kh thấy"+i+++" " + location);
+                                }
+                                 BookItem c=new BookItem(id, x,situation,y);
+                                //  System.out.println(Authors.SearchIdA(tmpA, author).getName());
+                                  // System.out.println(c.idBIteam+"   "+c.getBook().name+"   "+c.situation+"  "+c.getLocation().toString());
+        
+                               CTSach=BookItem.addElementBookItem(CTSach, c);
+                              //  System.out.println(c.idBIteam+"  "+c.getBook().name+"  "+c.situation + "  "+ c.location.toString());
+                              //  System.out.println(c.toString());
+                                             }
+                                             br.close();
+                                             fr.close();
+                                     } catch (Exception e) {
+                                         
+                                     }
+                                     }
+        
+                                 return CTSach;
+        }
+
 }
