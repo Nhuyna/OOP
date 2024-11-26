@@ -16,3 +16,4 @@
 1015;Victor Hugo
 1016;Oscar Wilde
 1017;Dante Alighieri
+1018;Nguyễn Nhật Ánh

@@ -38,9 +38,11 @@ public class Authors {
     public static Authors SearchIdA(Authors authors[],String a){
       for(Authors x:authors){
            if(x.getIdA().equals(a)){ 
+            System.out.println(x.getIdA()+": "+ a);
             return x;
            }
       }
+      System.out.println("Không tìm thấy tác giả này");
         return null;
     }
     public static Authors[] addElementAuthors(Authors[] TacGia, Authors tmp) {

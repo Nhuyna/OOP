@@ -34,12 +34,13 @@ public class Category {
     return tmp;
    }
    public static Category SearchId(Category TheLoai[],String a){
+    
     for(Category x : TheLoai){
          if(x.getIdC().equals(a)){
-           
           return x;
          }
     }
+    System.out.println("Thể loại này không tồn tại trong cơ sở dữ liệu");
       return null;
   }
   public static Category[] addElementCategory(Category[] theLoai, Category tmp) {

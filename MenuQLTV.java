@@ -5,10 +5,11 @@ import java.util.Scanner;
 
 public interface  MenuQLTV {
    public  void NhapThongTin();
-   public default void InThongTin(){
+   public static  void InThongTin(){
 
       System.out.println("Chọn chế độ: ");
       System.out.println("1. Thủ thư: ");
+      //1 6
       System.out.println("2. Người mượn sách");
       Scanner sc=new Scanner(System.in);
       int c= Integer.parseInt(sc.nextLine());
@@ -26,9 +27,42 @@ public interface  MenuQLTV {
          System.out.println("0.Thoát");
          int d=Integer.parseInt(sc.nextLine());
          switch (d) {
-             case 1:
+            case 1:
+             QLSach a=new QLSach();
+             a.NhapThongTin();
+               
+                  
+
+         break;
+
+             case 3:
+                   { //Tìm kiếm sách cần sửa
+                    Books []tmp=new Books[0];
+                    Books book=new Books();
+                    System.out.println("Nhap id sach can sua:");
                     
+                    Books.SearchId(tmp, "1234");
+                   }
+
                  break;
+            case 6:
+                //Xoa du lieu sach
+                {
+                  Books []tmp=new Books[0];
+
+                  tmp=Books.DocGhiDuLieuSach(false, tmp);
+                  System.out.println("Nhap id sach can xoa");
+                  String strid=sc.nextLine();
+                  
+                  Books []output=new Books[0];
+                  System.out.println("Du lieu sau khi xoa la:");
+                  output=Books.removeBooks(tmp, strid);
+                  Books.DocGhiDuLieuSach(true,output);
+                  System.out.println("Xoa sach thanh cong");
+                  
+                }
+               
+                
              default:
                  throw new AssertionError();
          }
@@ -57,4 +91,8 @@ public interface  MenuQLTV {
    
 
    
+   public default MenuQLTV SuaThongTin(MenuQLTV a){
+     
+      return a;
+}
 }

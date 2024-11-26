@@ -1,8 +1,12 @@
 
+
+
 public class main {
 
     public static void main(String[] args) {
            
+
+       MenuQLTV.InThongTin();
     // Books Sach[]=new Books[0];
     // Sach=QLSach.DocGhiDuLieuSach(false,Sach);
     // // System.out.println("hi");
@@ -86,12 +90,39 @@ public class main {
     //     System.out.println(x.toString());
     //    }
 
-    TTMuon DS[]=new TTMuon[0];
-    DS=TTMuon.NhapGhiDL(false, DS);
-    for(TTMuon x:DS){
-        System.out.println(x.toString());
-    }
+//     TTMuon DS[]=new TTMuon[0];
+//     DS=TTMuon.NhapGhiDL(false, DS);
+//     for(TTMuon x:DS){
+//         System.out.println(x.toString());
+//     }
+
+
+
+
+//    Books[] Sach=new Books[0];
+//    Sach=Books.DocGhiDuLieuSach(false, Sach);
+//    for(Books tmp:Sach){
+//     System.out.println(tmp.toString());
+//    }
+   
+//    System.out.println(Books.SearchId(Sach, "1002").toString());
+//    Books tmp=new Books();
+//    System.out.println(tmp.toString());
+
+ 
+
+// Category TheLoai[]=new Category[0];  
+// TheLoai=  Category.DocGhiDuLieuTheLoai(false, TheLoai);  
+// for(Category tmp: TheLoai){
+//     System.out.println(tmp.toString());
+// }
+
+    
+   
+    
 
 }
 }
+
+
 

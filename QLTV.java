@@ -8,9 +8,7 @@ public interface QLTV extends MenuQLTV{
 
    @Override
    public void NhapThongTin();
-   @Override
-   public void InThongTin();
- 
+      
       public static Calendar LayNgay(String str[]){
       Calendar Ngay=Calendar.getInstance();
       Ngay.set(Calendar.DAY_OF_YEAR,Integer.parseInt(str[0]));
@@ -22,6 +20,12 @@ public interface QLTV extends MenuQLTV{
       String str;
       str=Ngay.get(Calendar.DAY_OF_MONTH)+"/"+Ngay.get(Calendar.DAY_OF_MONTH)+"/"+Ngay.get(Calendar.YEAR);
       return str;
+    }
+
+    public default QLTV SuaThongTin(QLTV a){
+
+         
+           return a;
     }
    }
        //Xoá sách - ktra xem sách đó có trong thư viện không ->Xoá
